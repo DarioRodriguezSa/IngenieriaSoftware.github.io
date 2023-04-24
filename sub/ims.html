@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ims.css">
+	<title>GESTION DE CAMBIOS | IMS</title>
+    <a href="../index.html"><button>Volver a la pagina principal</button></a>
+</head>
+<body>
+	<h1>Calculo Del Indice de madurez del software</h1>
+	<label for="input-mt">Numero de modulos en la version actual:</label>
+	<input type="number" id="input-mt" name="input-mt">
+	<label for="input-fc">Numero de modulos cambiados en la version actual:</label>
+	<input type="number" id="input-fc" name="input-fc">
+	<label for="input-fa">Numero de modulos añadidos a la version actual:</label>
+	<input type="number" id="input-fa" name="input-fa">
+	<label for="input-fd">Numero de modulos de la version anterior eliminados en la actual:</label>
+	<input type="number" id="input-fd" name="input-fd">
+	<button onclick="calcularIMS()">Calcular IMS</button>
+	<p>IMS:</p>
+	<p id="output-text"></p>
+	<script>
+		function calcularIMS() {
+			const mt = parseFloat(document.getElementById('input-mt').value);
+			const fc = parseFloat(document.getElementById('input-fc').value);
+			const fa = parseFloat(document.getElementById('input-fa').value);
+			const fd = parseFloat(document.getElementById('input-fd').value);
+			const ims = (mt - (fa + fc + fd)) / mt;
+			document.getElementById('output-text').innerHTML = ims.toFixed(2);
+		}
+	</script>
+</body>
+</html>

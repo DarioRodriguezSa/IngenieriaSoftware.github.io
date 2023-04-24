@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buscaryeliminar.css">
+    <title>GESTION DE CAMBIOS | Buscar Y Eliminar</title>
+	<a href="../index.html"><button>Volver a la página principal</button></a>
+</head>
+<body>
+	<h1>Buscar y Eliminar</h1>
+	<label for="input-text">Ingresa los nombres y edades separados por comas:</label>
+	<textarea id="input-text" name="input-text" rows="5" cols="50"></textarea>
+	<label for="input-numbers">Ingresa los números separados por comas:</label>
+	<input type="text" id="input-numbers" name="input-numbers">
+	<button onclick="findMultiples()">Buscar</button>
+	<p>Nombres con edades múltiples de los números:</p>
+	<p id="output-text"></p>
+	<script src="script.js"></script>
+	<script>
+		function findMultiples() {
+	const input = document.getElementById('input-text').value;
+	const numbersInput = document.getElementById('input-numbers').value;
+	const numbers = numbersInput.split(',').map(Number);
+	const people = input.split(',');
+	let result = "";
+	for (let person of people) {
+		const nameAndAge = person.trim().split(' – ');
+		const name = nameAndAge[0];
+		const age = parseInt(nameAndAge[1], 10);
+		for (let number of numbers) {
+			if (age % number === 0) {
+				result += name + ", ";
+				break;
+			}
+		}
+	}
+	result = result.slice(0, -2);
+	document.getElementById('output-text').innerHTML = result;
+}
+	</script>
+</body>
+</html>

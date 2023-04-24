@@ -1,0 +1,73 @@
+/* Estilo para el body */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para el título */
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* Estilo para el formulario */
+form {
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las etiquetas del formulario */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Estilo para los campos de texto del formulario */
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el botón de calcular */
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilo para el resultado */
+#resultado {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+/* Estilo para el texto del resultado */
+#resultado p {
+  margin-bottom: 10px;
+}
+
+/* Estilo para el enlace de volver al inicio */
+#volver {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}

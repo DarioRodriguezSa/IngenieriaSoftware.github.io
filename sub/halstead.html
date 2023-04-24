@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/hasltead.css">
+    <title>GESTION DE CAMBIOS | Healstead</title>
+	<a href="../index.html"><button>Volver a la página principal</button></a>
+</head>
+<body>
+	<h1>Cálculo de métricas de Hasltead</h1>
+	<label for="n1">Número de operadores distintos (n1):</label>
+	<input type="number" id="n1" name="n1" min="1" required><br>
+	<label for="n2">Número de operandos distintos (n2):</label>
+	<input type="number" id="n2" name="n2" min="1" required><br>
+	<label for="N1">Número total de veces que aparece el operador (N1):</label>
+	<input type="number" id="N1" name="N1" min="1" required><br>
+	<label for="N2">Número total de veces que aparece el operando (N2):</label>
+	<input type="number" id="N2" name="N2" min="1" required><br><br>
+	<button onclick="calcular()">Calcular</button><br><br>
+	<label for="vocabulario">Vocabulario (n):</label>
+	<input type="number" id="vocabulario" name="vocabulario" disabled><br>
+	<label for="longitud">Longitud (N):</label>
+	<input type="number" id="longitud" name="longitud" disabled><br>
+	<label for="volumen">Volumen (V):</label>
+	<input type="number" id="volumen" name="volumen" disabled><br>
+	<label for="dificultad">Dificultad (D):</label>
+	<input type="number" id="dificultad" name="dificultad" disabled><br>
+	<label for="esfuerzo">Esfuerzo (E):</label>
+	<input type="number" id="esfuerzo" name="esfuerzo" disabled><br>
+	<label for="tiempo">Tiempo requerido (T):</label>
+	<input type="number" id="tiempo" name="tiempo" disabled><br>
+	<label for="bugs1">Número de bugs entregados (primera opción):</label>
+	<input type="number" id="bugs1" name="bugs1" disabled><br>
+	<label for="bugs2">Número de bugs entregados (segunda opción):</label>
+	<input type="number" id="bugs2" name="bugs2" disabled><br>
+	<script>
+		function calcular() {
+			const n1 = parseInt(document.getElementById('n1').value);
+			const n2 = parseInt(document.getElementById('n2').value);
+			const N1 = parseInt(document.getElementById('N1').value);
+			const N2 = parseInt(document.getElementById('N2').value);
+
+			const n = n1 + n2;
+			const N = N1 + N2;
+			const V = N * (Math.log2(n));
+			const D = (n1 / 2) * (N2 / n2);
+			const E = D * V;
+			const T = E / 18;
+			const B1 = Math.pow(E, 0.66666667) / 3000;
+			const B2 = V / 3000;
+
+			document.getElementById('vocabulario').value = n;
+            document.getElementById('longitud').value = N;
+            document.getElementById('volumen').value = V;
+            document.getElementById('dificultad').value = D;
+            document.getElementById('esfuerzo').value = E;
+            document.getElementById('tiempo').value = T;
+            document.getElementById('bugs1').value = B1;
+            document.getElementById('bugs2').value = B2;
+          }
+    </script>
+
+</body>
+</html>         
